@@ -1,0 +1,41 @@
+.footer-bg {
+    background: #383838;
+}
+.footer-about {
+    letter-spacing: 1px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+.about-icon {
+    font-size: 50px;
+    margin-left: 20px;
+}
+.about-icon:hover {
+    color: cadetblue;
+    cursor: pointer;
+}
+.footer-info span:hover {
+    color: cadetblue;
+    cursor: pointer;
+}
+.info-icon {
+    font-size: 20px;
+}
+.footer-subscribe input {
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+}
+.footer-btn {
+    border: none;
+    background: lightblue;
+    padding: 10px 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.footer-btn:hover {
+    background: salmon;
+}
+.footer-down {
+    background: #d8d8d8;
+}
