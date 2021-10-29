@@ -1,0 +1,10 @@
+.btn-service {
+    border: none;
+    background: lightblue;
+    padding: 10px 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.btn-service:hover {
+    background: salmon;
+}

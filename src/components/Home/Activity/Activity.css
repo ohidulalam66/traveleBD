@@ -1,0 +1,5 @@
+.activities h5:hover {
+    color: #1A92BF;
+    cursor: pointer;
+    text-decoration: underline;
+}

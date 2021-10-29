@@ -1,0 +1,27 @@
+.banner-bg {
+    background-image:url("https://i.ibb.co/hyZkQdQ/banner.jpg") ;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}
+.banner {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+.banner-header {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+}
+.btn-style {
+    border: none;
+    background: lightblue;
+    padding: 15px 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.btn-style:hover {
+    background: salmon;
+}
+  
