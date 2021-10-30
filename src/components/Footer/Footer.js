@@ -51,7 +51,7 @@ const Footer = () => {
                     <div className="d-flex justify-content-around align-items-center">
                         <p>Privacy Policy | Term & Condition | FAQ</p>
                         <div>
-                            <Navbar.Brand className="fw-bold fs-3 text-secondary" href="/home"><img src="https://i.ibb.co/T48RmNk/travel-icon.png" className="menu-icon" alt="" /> Travele BD</Navbar.Brand>
+                            <Navbar.Brand className="fw-bold fs-3 text-secondary" href="/home"><img src="https://i.im.ge/2021/10/30/omK4hC.png" className="menu-icon" alt="" /> Travele BD</Navbar.Brand>
                         </div>
                         <p>Copyright © 2021 Travele BD. All rights reserveds</p>
                     </div>

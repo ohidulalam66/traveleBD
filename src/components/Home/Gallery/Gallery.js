@@ -13,10 +13,10 @@ const Gallery = () => {
             </div>
             <Container className="pb-5">
                 <Row>
-                    <img src="https://i.ibb.co/88zRbpk/sajek.jpg" className="w-25" alt="" />
-                    <img src="https://i.ibb.co/PcmVG4K/sylhet.jpg" className="w-25" alt="" />
-                    <img src="https://i.ibb.co/WPf4f6m/kaptai.jpg" className="w-25" alt="" />
-                    <img src="https://i.ibb.co/PM1QdCL/cox-s-bazer.jpg" className="w-25" alt="" />
+                    <img src="https://i.im.ge/2021/10/30/omKxzJ.jpg" className="w-25" alt="" />
+                    <img src="https://i.im.ge/2021/10/30/omKYOy.jpg" className="w-25" alt="" />
+                    <img src="https://i.im.ge/2021/10/30/omKEya.jpg" className="w-25" alt="" />
+                    <img src="https://i.im.ge/2021/10/30/omKbmS.jpg" className="w-25" alt="" />
                 </Row>
             </Container>
         </>
@@ -25,6 +25,8 @@ const Gallery = () => {
 
 export default Gallery;
 /*
+
+
 
 
 

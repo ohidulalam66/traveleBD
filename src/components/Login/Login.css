@@ -1,0 +1,21 @@
+.from-filed {
+    background-image: url("https://iili.io/55V522.md.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.login-from {
+    display: flex;
+    flex-direction: column;
+}
+.field {
+    border: none;
+    background: #fdfdfd4d;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    width: 300px;
+    padding: 5px;
+}
