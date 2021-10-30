@@ -15,7 +15,7 @@ import Login from './components/Login/Login';
 import AuthProvider from './components/context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Booking from './components/Booking/Booking';
-import ManageAllOrders from './components/PrivateRoute/ManageAllOrders/ManageAllOrders';
+import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 
 function App() {
   return (

@@ -15,6 +15,7 @@ const Booking = () => {
     const nameRef = useRef();
     const emailRef = useRef();
     const serviceNameRef = useRef();
+    const locationRef = useRef();
     const priceRef = useRef();
     const dateRef = useRef();
     const numberRef = useRef();
@@ -31,10 +32,11 @@ const Booking = () => {
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const serviceName = serviceNameRef.current.value;
+        const locationName = locationRef.current.value;
         const price = priceRef.current.value;
         const date = dateRef.current.value;
         const number = numberRef.current.value;
-        const addNewBooking = { name, email, serviceName, price, date, number };
+        const addNewBooking = { name, email, serviceName, locationName, price, date, number };
 
         fetch(("http://localhost:5000/orders"), {
             method: 'POST',
@@ -67,9 +69,10 @@ const Booking = () => {
                             <input defaultValue={user.displayName} ref={nameRef} />
                             <input defaultValue={user.email} ref={emailRef} />
                             <input defaultValue={name} ref={serviceNameRef} />
+                            <input type="text" ref={locationRef} placeholder="Location" />
                             <input defaultValue={price} ref={priceRef} />
                             <input type="date" ref={dateRef} />
-                            <input type="text" ref={numberRef} placeholder="Phone No." />
+                            <input ref={numberRef} placeholder="Phone No." />
                             <input className="btn-service fw-bold" type="submit" value="Place Order" />
                         </form>
                     </Col>
