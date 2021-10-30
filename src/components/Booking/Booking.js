@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../hooks/useAuth';
 import './Booking.css';
@@ -11,10 +10,14 @@ const Booking = () => {
     const { serviceId } = useParams();
     const [service, setService] = useState({});
     const { name, image, price, offering, fullDescription } = service;
-
-    const { register, handleSubmit } = useForm();
     const { user } = useAuth();
 
+    const nameRef = useRef();
+    const emailRef = useRef();
+    const serviceNameRef = useRef();
+    const priceRef = useRef();
+    const dateRef = useRef();
+    const numberRef = useRef();
 
     useEffect(() => {
         const url = `http://localhost:5000/services/${serviceId}`;
@@ -23,26 +26,31 @@ const Booking = () => {
             .then(data => setService(data))
     }, [])
 
-    const onSubmit = data => {
-        // const savedCart = getStoredCart();
-        // data.order = savedCart;
+    const handleSubmit = e => {
 
-        // const url = `http://localhost:5000/services`;
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const serviceName = serviceNameRef.current.value;
+        const price = priceRef.current.value;
+        const date = dateRef.current.value;
+        const number = numberRef.current.value;
+        const addNewBooking = { name, email, serviceName, price, date, number };
 
-        // fetch((url), {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         if (result.insertedId) {
-        //             alert('Order processed Successfully');
-        //             reset();
-        //         }
-        //     })
+        fetch(("http://localhost:5000/orders"), {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addNewBooking)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Booked Successfully');
+                    e.target.reset();
+                }
+            })
+        e.preventDefault();
     };
     return (
         <>
@@ -55,13 +63,13 @@ const Booking = () => {
                     <Col>
                         <h3 className="fw-bold text-center">Booking Order</h3>
                         <hr />
-                        <form className="booking-form py-3" onSubmit={handleSubmit(onSubmit)}>
-                            <input defaultValue={user.displayName} {...register("name")} />
-                            <input defaultValue={user.email} {...register("email", { required: true })} />
-                            <input defaultValue={name}{...register("address")} />
-                            <input defaultValue={price}{...register("number")} />
-                            <input type="date" {...register("date")} />
-                            <input placeholder="Phone No."  {...register("phone")} />
+                        <form className="booking-form py-3" onSubmit={handleSubmit}>
+                            <input defaultValue={user.displayName} ref={nameRef} />
+                            <input defaultValue={user.email} ref={emailRef} />
+                            <input defaultValue={name} ref={serviceNameRef} />
+                            <input defaultValue={price} ref={priceRef} />
+                            <input type="date" ref={dateRef} />
+                            <input type="text" ref={numberRef} placeholder="Phone No." />
                             <input className="btn-service fw-bold" type="submit" value="Place Order" />
                         </form>
                     </Col>

@@ -5,11 +5,9 @@ import './Gallery.css';
 const Gallery = () => {
     return (
         <>
-            <div id="gallery">
-                <div className="text-center py-4">
-                    <p className="text-danger fw-bold"><i className="fas fa-grip-lines"> POPULAR DESTINATION</i> </p>
-                    <h1 className="services-header">TOP NOTCH DESTINATION</h1>
-                </div>
+            <div className="text-center py-4">
+                <p className="text-danger fw-bold"><i className="fas fa-grip-lines"> POPULAR DESTINATION</i> </p>
+                <h1 className="services-header">TOP NOTCH DESTINATION</h1>
             </div>
             <Container className="pb-5">
                 <Row>

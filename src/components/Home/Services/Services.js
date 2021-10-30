@@ -16,23 +16,21 @@ const Services = () => {
     }, [])
     return (
         <>
-            <div id="services">
-                <div className="text-center py-4">
-                    <p className="text-danger fw-bold"><i className="fas fa-grip-lines"></i> EXPLORE GREAT PLACES</p>
-                    <h1 className="services-header">POPULAR PACKAGES</h1>
-                </div>
-                <Container>
-                    <Row xs={1} md={4} className="g-4 pb-4">
-                        {
-                            services.map(service =>
-                                <Service
-                                    key={service.name}
-                                    service={service}
-                                ></Service>)
-                        }
-                    </Row>
-                </Container>
+            <div className="text-center py-4">
+                <p className="text-danger fw-bold"><i className="fas fa-grip-lines"></i> EXPLORE GREAT PLACES</p>
+                <h1 className="services-header">POPULAR PACKAGES</h1>
             </div>
+            <Container>
+                <Row xs={1} md={4} className="g-4 pb-4">
+                    {
+                        services.map(service =>
+                            <Service
+                                key={service.name}
+                                service={service}
+                            ></Service>)
+                    }
+                </Row>
+            </Container>
         </>
     );
 };
