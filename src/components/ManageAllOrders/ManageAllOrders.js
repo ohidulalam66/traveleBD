@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     }, [])
 
     const handleDeleteOrder = id => {
-        const proceed = window.confirm("Are you sure, you want to order Delete ?");
+        const proceed = window.confirm("Are you sure, you want to your client order Delete?");
         if (proceed) {
             const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
@@ -41,7 +41,7 @@ const ManageAllOrders = () => {
                             orders.map(order =>
                                 <div className="d-flex justify-content-around align-items-center manage-order" key={order._id}>
                                     <h5>{order.name}</h5>
-                                    <p><span className="fw-bold">To:</span> {order.locationName}</p>
+                                    <p><span className="fw-bold">From:</span> {order.locationName}</p>
                                     <p><span className="fw-bold">To:</span> {order.serviceName}</p>
                                     <p><span className="fw-bold">Date:</span> {order.date}</p>
                                     <p><span className="fw-bold">Phone No:</span> {order.number}</p>

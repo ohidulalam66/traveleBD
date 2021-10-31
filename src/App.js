@@ -7,8 +7,6 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
-import ContactUs from './components/ContactUs/ContactUs';
-import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import Login from './components/Login/Login';
@@ -35,21 +33,15 @@ function App() {
             <PrivateRoute path="/booking/:serviceId">
               <Booking />
             </PrivateRoute>
-            <Route path="/myOrders">
+            <PrivateRoute path="/myOrders">
               <MyOrders />
-            </Route>
-            <Route path="/manageAllOrders">
+            </PrivateRoute>
+            <PrivateRoute path="/manageAllOrders">
               <ManageAllOrders />
-            </Route>
-            <Route path="/addService">
+            </PrivateRoute>
+            <PrivateRoute path="/addService">
               <AddService />
-            </Route>
-            <Route path="/contactUs">
-              <ContactUs />
-            </Route>
-            <Route path="/aboutUs">
-              <AboutUs />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
