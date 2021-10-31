@@ -7,7 +7,7 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const handleServiceAdd = data => {
-        fetch('http://localhost:5000/services', {
+        fetch('https://possessed-castle-52693.herokuapp.com/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
