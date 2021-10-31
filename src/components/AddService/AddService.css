@@ -1,0 +1,22 @@
+.addService-form {
+    display: flex;
+    flex-direction: column;
+    background-image: url("https://iili.io/55V522.md.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 70vh;
+}
+.addService-form input,textarea {
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    width: 75%;
+    border: none;
+    background: #fdfdfd7c;
+    color: black;
+}
