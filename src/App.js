@@ -16,6 +16,7 @@ import Booking from './components/Booking/Booking';
 import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 import MyOrders from './components/MyOrders/MyOrders';
 import AddService from './components/AddService/AddService';
+import BookingDefault from './components/BookingDefault/BookingDefault';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
+            <PrivateRoute exact path="/booking">
+              <BookingDefault />
+            </PrivateRoute>
             <PrivateRoute path="/booking/:serviceId">
               <Booking />
             </PrivateRoute>

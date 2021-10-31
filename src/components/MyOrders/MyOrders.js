@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import useAuth from '../hooks/useAuth';
 import './MyOrders.css';
 
 const MyOrders = () => {
+    const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
+    console.log(myOrders);
 
     useEffect(() => {
         fetch("http://localhost:5000/orders")
@@ -21,7 +24,7 @@ const MyOrders = () => {
                 .then(result => {
                     if (result.deletedCount > 0) {
                         alert("Canceled SuccessFully")
-                        const remainingOrder = myOrders.filter(order => order._id !== id);
+                        const remainingOrder = myOrders.filter(orders => orders._id !== id);
                         setMyOrders(remainingOrder);
                     };
                 });
@@ -37,16 +40,15 @@ const MyOrders = () => {
                 <Row>
                     <Col>
                         {
-                            myOrders.map(myOrder =>
-                                <div className="d-flex justify-content-around align-items-center manage-order" key={myOrder._id}>
-                                    <h5>{myOrder.name}</h5>
-                                    <p><span className="fw-bold">From:</span> {myOrder.locationName}</p>
-                                    <p><span className="fw-bold">To:</span> {myOrder.serviceName}</p>
-                                    <p><span className="fw-bold">Date:</span> {myOrder.date}</p>
-                                    <p><span className="fw-bold">Phone No:</span> {myOrder.number}</p>
-                                    <button className="btn-service">Approve</button>
-                                    <button onClick={() => handleDeleteOrder(myOrder._id)} className="btn-service">Cancel</button>
-                                </div>)
+                            myOrders.filter(order => order.email === user.email).map(orders => <div className="d-flex justify-content-around align-items-center manage-order" key={orders._id}>
+                                <h5>{orders.name}</h5>
+                                <p><span className="fw-bold">From:</span> {orders.locationName}</p>
+                                <p><span className="fw-bold">To:</span> {orders.serviceName}</p>
+                                <p><span className="fw-bold">Date:</span> {orders.date}</p>
+                                <p><span className="fw-bold">Phone No:</span> {orders.number}</p>
+                                <button className="btn-service">Approve</button>
+                                <button onClick={() => handleDeleteOrder(orders._id)} className="btn-service">Cancel</button>
+                            </div>)
                         }
                     </Col>
                 </Row>
@@ -56,3 +58,8 @@ const MyOrders = () => {
 };
 
 export default MyOrders;
+
+
+/*
+
+*/
